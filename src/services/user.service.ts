@@ -52,7 +52,7 @@ const deleteUserById = async (userId: ObjectId) => {
   return user;
 };
 
-export = {
+export default {
   createUser,
   queryUsers,
   getUserById,

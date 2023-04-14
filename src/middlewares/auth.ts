@@ -8,6 +8,8 @@ import { roleRights } from "../config/roles"
 import ApiError from '../utils/ApiError';
 
 interface IUser {
+    name: string,
+    email: string,
     role: string,
     id: string,
     updatedAt: Date,

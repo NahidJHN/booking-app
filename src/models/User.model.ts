@@ -1,7 +1,7 @@
 import { model, ObjectId, Schema, } from "mongoose";
 import validator from "validator"
 import bcrypt from "bcryptjs"
-import { IUser, IUserModel, IUserMethods } from "../interfaces/Models/User.interface";
+import { IUser, IUserModel, IUserMethods } from "./interfaces/models/User.interface";
 import { roles } from "../config/roles";
 import paginate from "./plugins/paginate.plugin";
 

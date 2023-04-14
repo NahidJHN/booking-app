@@ -1,57 +1,47 @@
 import { model, Schema, Types } from "mongoose";
 import paginate from "./plugins/paginate.plugin";
-import IHotelModel from "../interfaces/Models/Hotel.interface";
+import IRoomModel from "./interfaces/models/Rooms.interface";
 
-const hotelSchema = new Schema<IHotelModel>(
+const roomSchema = new Schema<IRoomModel>(
     {
-        name: {
-            type: String,
+        admin: {
+            type: Types.ObjectId,
             required: true,
         },
-        type: {
-            type: String,
-            required: true,
-        },
-        city: {
-            type: String,
-            required: true,
-        },
-        address: {
-            type: String,
-            required: true,
-        },
-        distance: {
-            type: String,
-            required: true,
-        },
-        images: Array,
-        description: {
-            type: String,
+        hotel: {
+            type: Types.ObjectId,
             required: true,
         },
         title: {
             type: String,
-            required: true,
+            required: true
         },
-        rating: Number,
-        cheapestPrice: {
+        description: {
             type: String,
-            required: true,
+            required: true
         },
-        featured: {
-            type: Boolean,
-            required: false,
+        price: {
+            type: Number,
+            required: true
         },
-        rooms: [Types.ObjectId],
-
+        maxPeople: {
+            type: Number,
+            required: true
+        },
+        roomNumber: [
+            {
+                number: String,
+                unavailableDates: [Date]
+            }
+        ]
     },
     {
         timestamps: true,
     }
 );
 
-hotelSchema.plugin(paginate);
+roomSchema.plugin(paginate);
 
-const Hotel = model<IHotelModel>("Hotel", hotelSchema);
+const Room = model<IRoomModel>("Room", roomSchema);
 
-export default Hotel;
+export default Room;

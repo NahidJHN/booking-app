@@ -9,7 +9,7 @@ import emailService from "../services/email.service";
 
 
 const register = catchAsync(async (req: Request, res: Response) => {
-  const user = await userService.createUser(req.body);
+  await userService.createUser(req.body);
   res.status(httpStatus.CREATED).send({ message: "User Registration Successful" });
 });
 

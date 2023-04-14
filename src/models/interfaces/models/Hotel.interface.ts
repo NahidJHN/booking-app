@@ -1,7 +1,9 @@
 import { Types } from "mongoose"
+import mongoose from "mongoose"
 
 
 export default interface IHotelModel {
+    admin: mongoose.Schema.Types.ObjectId,
     name: string,
     type: string,
     city: string,

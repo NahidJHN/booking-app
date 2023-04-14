@@ -1,9 +1,13 @@
 import { model, Schema, Types } from "mongoose";
 import paginate from "./plugins/paginate.plugin";
-import IHotelModel from "../interfaces/Models/Hotel.interface";
+import IHotelModel from "./interfaces/models/Hotel.interface";
 
 const hotelSchema = new Schema<IHotelModel>(
     {
+        admin: {
+            type: Types.ObjectId,
+            required: true
+        },
         name: {
             type: String,
             required: true,
@@ -40,7 +44,6 @@ const hotelSchema = new Schema<IHotelModel>(
         },
         featured: {
             type: Boolean,
-            required: false,
         },
         rooms: [Types.ObjectId],
 
