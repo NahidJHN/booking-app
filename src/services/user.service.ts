@@ -1,6 +1,6 @@
 import httpStatus from "http-status";
 import { ObjectId } from "mongoose";
-import User from "../models/User";
+import User from "../models/User.model";
 import ApiError from "../utils/ApiError";
 
 import { userBody, userBodyUpdate } from "./interfaces/user.interface";

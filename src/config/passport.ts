@@ -1,7 +1,7 @@
 import { Strategy as JwtStrategy, ExtractJwt, } from "passport-jwt"
 import config from "./config";
 import { tokenTypes } from "./token";
-import User from "../models/User";
+import User from "../models/User.model";
 
 interface payload {
   type: string,

@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import { tokenTypes } from "../config/token";
-import { IToken } from "../interfaces/Token.interface";
+import { IToken } from "../interfaces/Models/Token.interface";
 
-const tokenSchema =new mongoose.Schema(
+const tokenSchema = new mongoose.Schema(
   {
     token: {
       type: String,
